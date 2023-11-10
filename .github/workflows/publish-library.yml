@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: sdec-common-lib-tarball
-          path: sdec-common-lib.tar.gz
+          path: dist/sdec-common-lib.tar.gz
 
       # - name: Publish to npm registry
       #   run: |
