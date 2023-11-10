@@ -1,0 +1,44 @@
+name: Publish Library
+
+on:
+  push:
+    branches:
+      - master
+      - features
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: |
+             cd projects/sdec-common-lib
+             npm install
+
+      - name: Install Angular CLI
+        run: |
+             cd projects/sdec-common-lib
+             npm install -g @angular/cli
+
+      - name: Serve Angular App
+        run: |
+             cd projects/sdec-common-lib
+             ng serve 
+
+      - name: Build Library
+        run: |
+             cd projects/sdec-common-lib
+             ng build sdec-common-lib
+
+      - name: Create Tarball
+        run: tar -czf sdec-common-lib.tar.gz dist/sdec-common-lib
+
