@@ -7,7 +7,7 @@ on:
       - features
 
 jobs:
-  publish library:
+  publish-library:
     runs-on: ubuntu-latest
 
     steps:
