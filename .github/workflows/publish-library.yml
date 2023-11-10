@@ -31,8 +31,7 @@ jobs:
 
       - name: Install and Serve Angular App
         run: |
-              npm install
-              ng serve & 
+              ng build
 
       - name: Build Library
         run: |
