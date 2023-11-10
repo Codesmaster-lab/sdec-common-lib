@@ -42,10 +42,13 @@ jobs:
       - name: Create Tarball
         run: |
              tar -czf sdec-common-lib.tar.gz dist/sdec-common-lib
-             npm publish sdec-common-lib.tar.gz
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sdec-common-lib-tarball
+          path: projects/sdec-common-lib/sdec-common-lib.tar.gz
+          
       # - name: Publish to npm registry
       #   run: |
       #      cd projects/sdec-common-lib
