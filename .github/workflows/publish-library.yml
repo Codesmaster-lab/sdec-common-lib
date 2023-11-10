@@ -40,13 +40,17 @@ jobs:
              ng build sdec-common-lib
 
       - name: Create Tarball
-        run: tar -czf sdec-common-lib.tar.gz dist/sdec-common-lib
-      
-      - name: Publish to npm registry
         run: |
-           cd projects/sdec-common-lib
-            ls 
-           npm publish sdec-common-lib.tar.gz
-        working-directory: dist
+             tar -czf sdec-common-lib.tar.gz dist/sdec-common-lib
+             npm publish sdec-common-lib.tar.gz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      # - name: Publish to npm registry
+      #   run: |
+      #      cd projects/sdec-common-lib
+      #       ls 
+      #      npm publish sdec-common-lib.tar.gz
+      #   working-directory: dist
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
