@@ -44,8 +44,8 @@ jobs:
       
       - name: Publish to npm registry
         run: |
-           cd dist
-             ls 
+           cd projects/sdec-common-lib
+            ls 
            npm publish sdec-common-lib.tar.gz
         working-directory: dist
         env:
