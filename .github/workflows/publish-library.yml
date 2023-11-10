@@ -42,6 +42,7 @@ jobs:
       - name: Create Tarball
         run: |
              cd dist
+             ls
              tar -czf sdec-common-lib.tar.gz sdec-common-lib
 
       - name: Upload Artifact
