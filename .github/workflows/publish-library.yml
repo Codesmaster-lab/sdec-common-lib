@@ -29,10 +29,10 @@ jobs:
              cd projects/sdec-common-lib
              npm install -g @angular/cli
 
-      - name: Serve Angular App
+      - name: Install and Serve Angular App
         run: |
-             cd projects/sdec-common-lib
-             ng serve 
+              npm install
+              ng serve 
 
       - name: Build Library
         run: |
