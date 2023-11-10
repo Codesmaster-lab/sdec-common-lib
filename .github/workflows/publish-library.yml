@@ -32,7 +32,11 @@ jobs:
       - name: Install and Serve Angular App
         run: |
               npm install
+<<<<<<< HEAD
               ng serve & 
+=======
+              ng serve --watch=false
+>>>>>>> 0475b1b96b2a35258ab7879fe9663d7a28615372
 
       - name: Build Library
         run: |
