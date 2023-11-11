@@ -59,3 +59,20 @@ jobs:
       #   working-directory: dist
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  publish-npm:
+    needs: publish-library
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sdec-common-lib-tarball
+          path: projects/sdec-common-lib  # Corrected path
+
+      - name: Publish to npm registry
+        run: |
+          cd projects/sdec-common-lib
+          npm publish sdec-common-lib.tar.gz
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
