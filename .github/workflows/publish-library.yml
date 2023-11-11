@@ -48,7 +48,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: sdec-common-lib-tarball
+          name: sdec-common-lib
           path: dist/sdec-common-lib.tar.gz
 
       # - name: Publish to npm registry
@@ -67,7 +67,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
-          name: sdec-common-lib-tarball
+          name: sdec-common-lib
           path: projects/sdec-common-lib  # Corrected path
 
       # - name: Authenticate with npm registry
@@ -79,6 +79,6 @@ jobs:
       - name: Publish to npm registry
         run: |
           cd projects/sdec-common-lib
-          npm publish sdec-common-lib.tar.gz --access public 
+          npm publish sdec-common-lib.tar.gz --access public  
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
