@@ -70,15 +70,15 @@ jobs:
           name: sdec-common-lib-tarball
           path: projects/sdec-common-lib  # Corrected path
 
-      - name: Authenticate with npm registry
-        run: npm login --registry=https://registry.npmjs.org/
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          
+      # - name: Authenticate with npm registry
+      #   run: npm login --registry=https://registry.npmjs.org/
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Publish to npm registry
         run: |
           cd projects/sdec-common-lib
-          npm publish sdec-common-lib.tar.gz
+          npm publish sdec-common-lib.tar.gz --access public 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
