@@ -43,13 +43,13 @@ jobs:
         run: |
              cd dist
              ls
-             tar -czf sdec-common-lib-new.tar.gz sdec-common-lib
+             tar -czf sdec-common-lib.tar.gz sdec-common-lib
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: sdec-common-lib
-          path: dist/sdec-common-lib-new.tar.gz
+          path: dist/sdec-common-lib.tar.gz
 
       # - name: Publish to npm registry
       #   run: |
@@ -74,7 +74,7 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
       - name: Publish to npm registry
-        run: npm publish sdec-common-lib-new.tar.gz 
+        run: npm publish sdec-common-lib.tar.gz 
         working-directory: projects/sdec-common-lib 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
