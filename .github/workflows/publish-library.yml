@@ -80,4 +80,4 @@ jobs:
         run: npm publish sdec-common-lib.tar.gz --access public
         working-directory: projects/sdec-common-lib 
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: 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
