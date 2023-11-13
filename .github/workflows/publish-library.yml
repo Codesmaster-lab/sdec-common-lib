@@ -69,6 +69,7 @@ jobs:
       - name: Update Library version 
         run: |
              cd projects/sdec-common-lib
+             ls
              node update-version.js
 
       - name: Publish to npm registry
