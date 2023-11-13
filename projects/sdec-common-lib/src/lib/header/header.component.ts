@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  // toggleNavbar() {
+  //   const navbarLinks = document.querySelector('.navbar-links');
+  //   navbarLinks.style.display = (navbarLinks.style.display === 'flex' || navbarLinks.style.display === '') ? 'none' : 'flex';
+  // }
 }
