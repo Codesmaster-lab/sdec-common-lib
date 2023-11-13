@@ -69,7 +69,7 @@ jobs:
       - name: Update Library version 
         run: |
              cd projects/sdec-common-lib
-             node update-version.ts
+             node update-version.js
 
       - name: Publish to npm registry
         run: npm publish sdec-common-lib.tar.gz 
