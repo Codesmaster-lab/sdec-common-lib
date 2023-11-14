@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - master
-      - features
 
 jobs:
-  publish-library:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -53,7 +52,7 @@ jobs:
 
 
   publish-npm:
-    needs: publish-library
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
