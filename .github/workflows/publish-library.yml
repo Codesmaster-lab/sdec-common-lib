@@ -66,12 +66,6 @@ jobs:
       - name: Authenticate with npm registry
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
-      - name: Update Library version 
-        run: |
-             cd projects/sdec-common-lib
-             ls
-             node update-version.js
-
       - name: Publish to npm registry
         run: npm publish sdec-common-lib.tar.gz 
         working-directory: projects/sdec-common-lib 
