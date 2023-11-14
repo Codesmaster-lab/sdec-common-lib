@@ -1,6 +1,6 @@
 # SdecCommon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Contribute to this library by making a branch of your own and don't forget to run `node update-version.js` before making a pull request to master
 
 ## Development server
 
